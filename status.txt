@@ -2,18 +2,18 @@ Checking status of output
 
 
 1 - done
-2 -
+2 - in progress
 3 - done
 4 - done
-5 - in progress
+5 - 
 6 - in progress
 7 -
 8 - done
 9 - in progress
-10 - 
+10 - done --> the end nodes are not accessible because they don't exist, so there is no output
 11 - 
 12 - 
-13 - in progress ---> memory error....
+13 - memory error....
 14 - N/A
 15 - 
 16 - done

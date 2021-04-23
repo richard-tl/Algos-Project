@@ -61,6 +61,9 @@ class Graph {
   public List<List<Integer>> allConnectingPaths(List<List<Integer>> nodePairs) {
     boolean[] deletedNodes = new boolean[vertices+1];
     List<List<Integer>> allPaths = new ArrayList<>();
+    if(!hasSolution(nodePairs)) {
+      return allPaths;
+    }
     recurse(nodePairs, deletedNodes, nodePairs.size(), 0, allPaths);
     return allPaths;
   }
@@ -115,6 +118,16 @@ class Graph {
     for(int i = 0; i < nodes.size(); i++) {
       deleted[nodes.get(i)] = false;
     }
+  }
+
+  private boolean hasSolution(List<List<Integer>> nodePairs) { {
+    for(List<Integer> p: nodePairs)  {
+      if(list.get(p.get(0)).isEmpty() || list.get(p.get(1)).isEmpty()) {
+        return false;
+      }
+    }
+    return true;
+  }
   }
   
 }
