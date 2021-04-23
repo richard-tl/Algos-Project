@@ -6,14 +6,14 @@ Checking status of output
 3 - done
 4 - done
 5 - in progress
-6 - 
+6 - in progress
 7 -
 8 - done
 9 - in progress
 10 - 
 11 - 
 12 - 
-13 - 
+13 - in progress ---> memory error....
 14 - N/A
 15 - 
 16 - done
