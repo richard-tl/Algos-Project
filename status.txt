@@ -2,17 +2,17 @@ Checking status of output
 
 
 1 - done
-2 - in progress
+2 - 
 3 - done
 4 - done
 5 - DONE 
-6 - in progress
+6 - 
 7 -
 8 - done
 9 - DONE
 10 - 
 11 - DONE
-12 - 
+12 -  
 13 - DONE
 14 - N/A
 15 - 
