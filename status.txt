@@ -10,7 +10,7 @@ Checking status of output
 7 -
 8 - done
 9 - in progress
-10 - done --> the end nodes are not accessible because they don't exist, so there is no output
+10 - 
 11 - 
 12 - 
 13 - memory error....

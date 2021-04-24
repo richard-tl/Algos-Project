@@ -122,7 +122,7 @@ class Graph {
 
   private boolean hasSolution(List<List<Integer>> nodePairs) { {
     for(List<Integer> p: nodePairs)  {
-      if(list.get(p.get(0)).isEmpty() || list.get(p.get(1)).isEmpty()) {
+      if(list.get(p.get(0)).isEmpty()) {
         return false;
       }
     }
