@@ -5,19 +5,19 @@ Checking status of output
 2 - in progress
 3 - done
 4 - done
-5 - 
+5 - DONE 
 6 - in progress
 7 -
 8 - done
-9 - in progress
+9 - DONE
 10 - 
-11 - 
+11 - DONE
 12 - 
-13 - memory error....
+13 - DONE
 14 - N/A
 15 - 
 16 - done
-17 - 
+17 - DONE
 18 - N/A
 19 - 
 20 - 

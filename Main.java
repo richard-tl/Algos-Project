@@ -19,6 +19,7 @@ class Main {
     //
     readFile(inputFile, g, pairs, numpairs);
     File f = createFile(outputFile);
+    //List<List<Integer>> res = g.returnPaths(pairs, 1);
     List<List<Integer>> res = g.allConnectingPaths(pairs);
     writeToFile(res, f);
   }

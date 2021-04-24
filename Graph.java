@@ -32,10 +32,11 @@ class Graph {
   }
 
        
-  public List<List<Integer>> returnPaths(int source, int dest) { 
+  public List<List<Integer>> returnPaths(List<List<Integer>> nodePairs, int skip) { 
     paths = new ArrayList<>();
     boolean[] visited = new boolean[vertices+1];
-    dfs(new ArrayList<>(),source, dest, visited);
+    doNotVisit(visited, nodePairs, skip);
+    dfs(new ArrayList<>(), nodePairs.get(skip).get(0), nodePairs.get(skip).get(1), visited);
     return paths;
   }
     
@@ -49,13 +50,23 @@ class Graph {
     }
     local.add(current);
     visited[current] = true;
-    for(int child : list.get(current)) {  
+    for(int child : list.get(current)) {
+       
       if(!visited[child]) {  
         dfs(local, child, dest, visited);
       }
     }
     visited[current] = false;
     local.remove(local.size()-1);
+  }
+
+  private void doNotVisit(boolean[] visited, List<List<Integer>> nodePairs, int skip) {
+    for(int i = 0; i < nodePairs.size(); i++) {
+      if(i != skip) {
+        visited[nodePairs.get(i).get(0)] = true;
+        visited[nodePairs.get(i).get(1)] = true;
+      }
+    }
   }
 
   public List<List<Integer>> allConnectingPaths(List<List<Integer>> nodePairs) {
@@ -73,14 +84,14 @@ class Graph {
       pathsFound = true;
       return;
     }
-    List<List<Integer>> connectingPaths = returnPaths(nodePairs.get(pairNum).get(0), nodePairs.get(pairNum).get(1));
+    List<List<Integer>> connectingPaths = returnPaths(nodePairs, pairNum);
     for(List<Integer> tmp : connectingPaths) {
       if(hasOverlap(deleted, tmp)) {
         continue;
       }
       allPaths.add(tmp);
       checkNodes(deleted, tmp);
-      System.out.println("Adding to path from : " + nodePairs.get(pairNum).get(0) + "to" + nodePairs.get(pairNum).get(1));
+      System.out.println("Adding to path from : " + nodePairs.get(pairNum).get(0) + " to " + nodePairs.get(pairNum).get(1));
       for(int i : tmp) {
         System.out.print(i + " ");
       }
@@ -93,7 +104,7 @@ class Graph {
         uncheckNodes(deleted, uncheck);
         System.out.println("Deleting: ");
         for(int i : tmp) {
-          System.out.print(i);
+          System.out.print(i + " ");
         }
         System.out.println();
       }
